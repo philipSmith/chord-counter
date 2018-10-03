@@ -200,7 +200,6 @@ var counter = {
         }
         this.removeEnharmonicEquivalents(this.triads);
         return this.countMinusEquivalents(this.triads);
-
     },
     count4NoteChords: function () {
         // this will be limited to sixths and sevenths
@@ -221,7 +220,6 @@ var counter = {
         }
         this.removeEnharmonicEquivalents(chords);
         return this.countMinusEquivalents(chords);
-        this.triads = null; // hope gc will free up memory
     },
     count5NoteChords: function () {
         // we have 6/9 and ninth chords
@@ -246,8 +244,6 @@ var counter = {
         }
         this.removeEnharmonicEquivalents(chords);
         return this.countMinusEquivalents(chords);
-        this.sixthChords = null;    // not needed anymore
-        this.seventhChords = null;  // hope gc will free up memory
     },
     count6NoteChords: function () {
         var chords = new Array;
@@ -262,8 +258,6 @@ var counter = {
         }
         this.removeEnharmonicEquivalents(chords);
         return this.countMinusEquivalents(chords);
-        this.ninthChords = null;    // not needed anymore
-
     },
     count7NoteChords: function () {
         var chords = new Array;
@@ -278,8 +272,6 @@ var counter = {
         }
         this.removeEnharmonicEquivalents(chords);
         return this.countMinusEquivalents(chords);
-        this.eleventhChords = null;    // not needed anymore
-
     },
     removeEnharmonicEquivalents: function (chordArray) {
         for (var i = 0; i < chordArray.length; i++) {
